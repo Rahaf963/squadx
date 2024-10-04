@@ -31,7 +31,7 @@ app.post("/generate-form", async (req, res) => {
     );
     
     if (response.data.success) {
-      const dynamicLink = `https://squadx.c/form/${formId}`;
+      const dynamicLink = `https://squadx.cc/form/${formId}`;
       res.send(dynamicLink);
     } else {
       res.status(500).send("Failed to insert form details");
