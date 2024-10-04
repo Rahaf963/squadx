@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Processing Payment</title>
+    <meta
+      name="spaceremit-verification"
+      content="0TYZGDD5T8RNGZTGT6MI6F3VM1AG5L1JLPJ5IRG92LTXHQ3U31"
+    />
+    <style>
+      /* Style the loading message to be centered on the screen */
+      body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3;
+      }
+      .loading-text {
+        font-size: 20px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading message in the center of the screen -->
+    <div class="loading-text">Processing your payment, please wait...</div>
+
+    <script>
+      // Function to extract URL parameters
+      function getUrlParameter(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+      }
+
+      // Extract 'url' parameter for redirection
+      const redirectUrl = getUrlParameter('url');
+      // const wix = getUrlParameter('wix')
+      // const id = getUrlParameter('formId')
+
+      // Check if the 'url' parameter exists
+      if (redirectUrl) {
+        // Redirect the user to the 'url' after a brief delay (e.g., 2 seconds)
+        setTimeout(() => {
+          window.location.href = redirectUrl;
+        }, 2000);
+      } else {
+        // If no 'url' parameter is found, show an error in the console
+        console.error("No redirect URL found in the query parameters.");
+      }
+    </script>
+  </body>
+</html>
